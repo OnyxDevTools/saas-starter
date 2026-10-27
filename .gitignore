@@ -1,0 +1,28 @@
+# filename: .gitignore
+node_modules/
+.next/
+.next-build/
+.env*
+!.env.example
+npm-debug.log*
+playwright-report/
+test-results/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+*.dmg
+
+# Downloaded Onyx credentials (schema under api/ stays tracked)
+**/onyx-database*.json
+/config/
+
+# Local service credentials, development tools and generated reports
+**/*firebase-adminsdk*.json
+**/*service-account*.json
+*.key
+*.pem
+reports/
+.cache/
+.react-email/
+.test-runtime/
+*-debug.log

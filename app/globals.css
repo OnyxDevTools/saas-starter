@@ -1,0 +1,138 @@
+/* filename: app/globals.css */
+/* Semantic themes. Both modes share the Admin Starter component system. */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  color-scheme: dark;
+  /* Parchment / Aubergine / Clay — all brand decisions live here. */
+  --background: #231c27;
+  --foreground: #f3e9e1;
+  --card: #2c2330;
+  --card-foreground: #f3e9e1;
+  --popover: #352a39;
+  --popover-foreground: #f3e9e1;
+  --muted: #382c3c;
+  --muted-foreground: #c3b1c3;
+  --border: #514152;
+  --input: #8b778a;
+  --ring: #e7b8d7;
+  --primary: #dcb4d2;
+  --primary-foreground: #2c1730;
+  --secondary: #493737;
+  --secondary-foreground: #f1cbc0;
+  --accent: #453348;
+  --accent-foreground: #f4deed;
+  --destructive: #ef9aa7;
+  --destructive-foreground: #36131d;
+  --success: #9fc8aa;
+  --warning: #e5bf7b;
+  --info: #b7bedf;
+  --sidebar: #1b161f;
+  --sidebar-foreground: #dfcddd;
+  --sidebar-border: #49394b;
+  --sidebar-accent: #39273c;
+  --sidebar-active: #54364f;
+  --sidebar-active-foreground: #f7e6f0;
+  --radius: 0.75rem;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #f5f0e7;
+  --foreground: #352b38;
+  --card: #fffcf6;
+  --card-foreground: #352b38;
+  --popover: #fffcf6;
+  --popover-foreground: #352b38;
+  --muted: #eee6dc;
+  --muted-foreground: #716474;
+  --border: #ddd0d5;
+  --input: #9e8a9d;
+  --ring: #6d365f;
+  --primary: #6d365f;
+  --primary-foreground: #fffbf7;
+  --secondary: #eed9cf;
+  --secondary-foreground: #754938;
+  --accent: #efe3ec;
+  --accent-foreground: #5f3759;
+  --destructive: #b2334a;
+  --destructive-foreground: #fff8f5;
+  --success: #2c6549;
+  --warning: #825b1c;
+  --info: #515e8a;
+  --sidebar: #ece2dc;
+  --sidebar-foreground: #49364b;
+  --sidebar-border: #d8c9ce;
+  --sidebar-accent: #e5d5df;
+  --sidebar-active: #6d365f;
+  --sidebar-active-foreground: #fffbf7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-lora), ui-serif, Georgia, serif;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-active-foreground: var(--sidebar-active-foreground);
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.35rem);
+  --radius-2xl: calc(var(--radius) + 0.7rem);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+/* Technical values use monospace and tabular numerals. */
+.numeric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A restrained editorial heading style sets this starter apart from the tools UI. */
+h1 {
+  font-family: var(--font-lora), ui-serif, Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "saas-starter",
+  "name": "SaaS Starter",
+  "description": "A full-stack team-projects SaaS foundation with Firebase sessions, scoped organizations, Onyx persistence, optional billing and a private invitation outbox.",
+  "tags": ["nextjs", "typescript", "saas", "organizations", "onyx", "firebase"],
+  "useWhen": [
+    "An authenticated multi-organization SaaS app needs projects, roles, invitations and optional subscriptions"
+  ],
+  "avoidWhen": [
+    "A public content-only site or separate backend service is the primary requirement"
+  ],
+  "capabilities": [
+    "One modular Next.js application",
+    "Verified Firebase application sessions",
+    "Organization roles and invariant protection",
+    "Projects, usage and persisted activity",
+    "Optional Stripe and explicit demo billing",
+    "React Email with authenticated encrypted outbox"
+  ],
+  "notIncluded": [
+    "Hosting adapter",
+    "Automatic schema publication",
+    "Background worker",
+    "Unverified preview identity bypass"
+  ],
+  "examplePrompt": "Build a shared team workspace with projects, invitations, role permissions and optional subscription billing.",
+  "preview": {
+    "route": "/",
+    "image": "public/template-preview.png"
+  },
+  "runtime": {
+    "node": ">=24.12.0",
+    "install": "npm ci",
+    "develop": "npm run dev -- --port <assigned-port>",
+    "build": "npm run build",
+    "start": "npm run start -- --port <assigned-port>",
+    "healthPath": "/api/health",
+    "requiredEnvironment": [
+      "Application Firebase settings and server credentials",
+      "Existing Onyx downloaded configuration",
+      "APP_ORIGIN",
+      "Stable invitation encryption key for the outbox"
+    ],
+    "readinessPath": "/api/ready"
+  },
+  "initialize": "npm run template:init -- --name <project-name> --slug <project-slug>",
+  "instructions": "README.md"
+}

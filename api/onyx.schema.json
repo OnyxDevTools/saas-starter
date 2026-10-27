@@ -1,0 +1,662 @@
+{
+  "tables": [
+    {
+      "name": "Profile",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "email",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Organization",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Membership",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "role",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "userId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "email",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Invitation",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "role",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "tokenHash",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "expiresAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "acceptedBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "email",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Project",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdBy",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Subscription",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "provider",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "plan",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "stripeCustomerId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "stripeSubscriptionId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "priceId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "currentPeriodEnd",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "stripeCustomerId",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "BillingEvent",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "objectId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "customerId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "subscriptionId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "eventCreated",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "attempts",
+          "type": "Int",
+          "isNullable": false
+        },
+        {
+          "name": "failureCode",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "Notification",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "invitationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "recipient",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "encryptedToken",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "channel",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "attempts",
+          "type": "Int",
+          "isNullable": false
+        },
+        {
+          "name": "failureCode",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "status",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "AuditEvent",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "organizationId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "actorId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "actorName",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "action",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "subjectId",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "createdAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "organizationId",
+          "type": "DEFAULT"
+        },
+        {
+          "name": "createdAt",
+          "type": "DEFAULT"
+        }
+      ],
+      "resolvers": [],
+      "triggers": []
+    },
+    {
+      "name": "MutationLock",
+      "type": "DEFAULT",
+      "identifier": {
+        "name": "id",
+        "type": "String",
+        "generator": "None"
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "operation",
+          "type": "String",
+          "isNullable": false
+        },
+        {
+          "name": "acquiredAt",
+          "type": "Timestamp",
+          "isNullable": false
+        }
+      ],
+      "indexes": [],
+      "resolvers": [],
+      "triggers": []
+    }
+  ]
+}
